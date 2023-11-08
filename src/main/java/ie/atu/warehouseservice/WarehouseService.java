@@ -6,20 +6,13 @@ import java.util.ArrayList;
 
 @Service
 public class WarehouseService {
-    ArrayList<Product> storage = new ArrayList<>();
+    ArrayList<Warehouse> warehouses = new ArrayList<>();
 
-    /*
-    public Object registerProductService(Product product) {
-        storage.add(product);
-        return storage;
+    public void addWarehouse(Warehouse warehouse) {
+        warehouses.add(warehouse);
     }
 
-    public Object returnSpecificProductById(int id) {
-        return storage.stream().filter(product -> product.getProductId() == id).findFirst().orElse(null);
+    public Warehouse getWarehouseById(int id) {
+        return warehouses.stream().filter(wh -> wh.getWarehouseId() == id).findFirst().orElse(null);
     }
-
-     */
-
-    @PostMapping()
-    public Object getWarehouseById()
 }

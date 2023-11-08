@@ -17,7 +17,8 @@ public class WarehouseController {
     }
 
     @GetMapping("/get-product-by-id/{id}")
-    public Object returnProduct(@PathVariable String id) {
-        return new Product();
+    public Object returnProduct(@PathVariable int id) {
+        return storage.stream().filter(product -> product.getProductId() == id).findFirst().orElse(null);
+        //return new Product();
     }
 }

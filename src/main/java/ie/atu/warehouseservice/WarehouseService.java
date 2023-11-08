@@ -1,15 +1,25 @@
 package ie.atu.warehouseservice;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-@RestController
+import java.util.ArrayList;
+
+@Service
 public class WarehouseService {
-    @PostMapping("/get-product-by-id")
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public Object getWarehouseById() {
-        return "asd";
+    ArrayList<Product> storage = new ArrayList<>();
+
+    /*
+    public Object registerProductService(Product product) {
+        storage.add(product);
+        return storage;
     }
+
+    public Object returnSpecificProductById(int id) {
+        return storage.stream().filter(product -> product.getProductId() == id).findFirst().orElse(null);
+    }
+
+     */
+
+    @PostMapping()
+    public Object getWarehouseById()
 }

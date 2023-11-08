@@ -23,7 +23,10 @@ public class WarehouseController {
 
     @GetMapping("/get-product-by-id/{id}")
     public Object returnProduct(@PathVariable String id) {
-        return product_storage.stream().filter(product -> product.getProductId() == Integer.parseInt(id)).findFirst().orElse(null);
+        return product_storage.
+                stream().
+                filter(product -> product.getProductId() == Integer.parseInt(id)).
+                findFirst().orElse(null);
     }
 
     @PostMapping("/add-warehouse")

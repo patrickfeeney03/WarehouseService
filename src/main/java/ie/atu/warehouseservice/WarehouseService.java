@@ -13,9 +13,9 @@ public class WarehouseService {
     }
 
     public Warehouse getWarehouseById(int id) {
-        return warehouse_storage.stream().
+        return warehouse_storage.
+                stream().
                 filter(wh -> wh.getWarehouseId() == id).
-                findFirst().
-                orElse(null);
+                findFirst().orElse(null);
     }
 }

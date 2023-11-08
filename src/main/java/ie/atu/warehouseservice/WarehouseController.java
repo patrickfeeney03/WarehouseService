@@ -13,17 +13,17 @@ public class WarehouseController {
         this.warehouseService = warehouseService;
     }
 
-    ArrayList<Product> storage = new ArrayList<>();
+    ArrayList<Product> product_storage = new ArrayList<>();
 
     @PostMapping("/add-product")
     public Object registerProduct(@RequestBody Product product) {
-        storage.add(product);
-        return storage;
+        product_storage.add(product);
+        return product_storage;
     }
 
     @GetMapping("/get-product-by-id/{id}")
     public Object returnProduct(@PathVariable String id) {
-        return storage.stream().filter(product -> product.getProductId() == Integer.parseInt(id)).findFirst().orElse(null);
+        return product_storage.stream().filter(product -> product.getProductId() == Integer.parseInt(id)).findFirst().orElse(null);
     }
 
     @PostMapping("/add-warehouse")

@@ -6,13 +6,16 @@ import java.util.ArrayList;
 
 @Service
 public class WarehouseService {
-    ArrayList<Warehouse> warehouses = new ArrayList<>();
+    ArrayList<Warehouse> warehouse_storage = new ArrayList<>();
 
     public void addWarehouse(Warehouse warehouse) {
-        warehouses.add(warehouse);
+        warehouse_storage.add(warehouse);
     }
 
     public Warehouse getWarehouseById(int id) {
-        return warehouses.stream().filter(wh -> wh.getWarehouseId() == id).findFirst().orElse(null);
+        return warehouse_storage.stream().
+                filter(wh -> wh.getWarehouseId() == id).
+                findFirst().
+                orElse(null);
     }
 }
